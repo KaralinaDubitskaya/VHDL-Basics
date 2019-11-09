@@ -1,0 +1,19 @@
+xst -intstyle ise -ifn "E:/xilinx/projects/lab1/task1.xst" -ofn "E:/xilinx/projects/lab1/task1.syr" 
+xst -intstyle ise -ifn "E:/xilinx/projects/lab1/task1.xst" -ofn "E:/xilinx/projects/lab1/task1.syr" 
+xst -intstyle ise -ifn "E:/xilinx/projects/lab1/task1.xst" -ofn "E:/xilinx/projects/lab1/task1.syr" 
+xst -intstyle ise -ifn "E:/xilinx/projects/lab1/task1.xst" -ofn "E:/xilinx/projects/lab1/task1.syr" 
+vhdtdtfi -lib work task1.vhd -prj lab1 -o task1.spl -module task1 -template E:/xilinx/drivers/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 task1.spl E:/xilinx/projects/lab1/task1.sym 
+xst -intstyle ise -ifn "E:/xilinx/projects/lab1/task1.xst" -ofn "E:/xilinx/projects/lab1/task1.syr" 
+xst -intstyle ise -ifn "E:/xilinx/projects/lab1/task1.xst" -ofn "E:/xilinx/projects/lab1/task1.syr" 
+xst -intstyle ise -ifn "E:/xilinx/projects/lab1/task1.xst" -ofn "E:/xilinx/projects/lab1/task1.syr" 
+xst -intstyle ise -ifn "E:/xilinx/projects/lab1/task1.xst" -ofn "E:/xilinx/projects/lab1/task1.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-ftg256-3 task1.ngc task1.ngd  
+map -intstyle ise -p xc6slx9-ftg256-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o task1_map.ncd task1.ngd task1.pcf 
+par -w -intstyle ise -ol high -mt off task1_map.ncd task1.ncd task1.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml task1.twx task1.ncd -o task1.twr task1.pcf 
+xst -intstyle ise -ifn "E:/xilinx/projects/lab1/task1.xst" -ofn "E:/xilinx/projects/lab1/task1.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-ftg256-3 task1.ngc task1.ngd  
+map -intstyle ise -p xc6slx9-ftg256-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o task1_map.ncd task1.ngd task1.pcf 
+par -w -intstyle ise -ol high -mt off task1_map.ncd task1.ncd task1.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml task1.twx task1.ncd -o task1.twr task1.pcf 

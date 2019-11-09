@@ -1,0 +1,23 @@
+xst -intstyle ise -ifn "E:/xilinx/projects/lab1/taskB.xst" -ofn "E:/xilinx/projects/lab1/taskB.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-ftg256-3 taskB.ngc taskB.ngd  
+map -intstyle ise -p xc6slx9-ftg256-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o taskB_map.ncd taskB.ngd taskB.pcf 
+par -w -intstyle ise -ol high -mt off taskB_map.ncd taskB.ncd taskB.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml taskB.twx taskB.ncd -o taskB.twr taskB.pcf 
+bitgen -intstyle ise -f taskB.ut taskB.ncd 
+xst -intstyle ise -ifn "E:/xilinx/projects/lab1/taskB.xst" -ofn "E:/xilinx/projects/lab1/taskB.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc taskB_mapping.ucf -p xc6slx9-tqg144-3 taskB.ngc taskB.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o taskB_map.ncd taskB.ngd taskB.pcf 
+xst -intstyle ise -ifn "E:/xilinx/projects/lab1/taskB.xst" -ofn "E:/xilinx/projects/lab1/taskB.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc taskB_mapping.ucf -p xc6slx9-tqg144-3 taskB.ngc taskB.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o taskB_map.ncd taskB.ngd taskB.pcf 
+xst -intstyle ise -ifn "E:/xilinx/projects/lab1/taskB.xst" -ofn "E:/xilinx/projects/lab1/taskB.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc taskB_mapping.ucf -p xc6slx9-ftg256-3 taskB.ngc taskB.ngd  
+map -intstyle ise -p xc6slx9-ftg256-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o taskB_map.ncd taskB.ngd taskB.pcf 
+par -w -intstyle ise -ol high -mt off taskB_map.ncd taskB.ncd taskB.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml taskB.twx taskB.ncd -o taskB.twr taskB.pcf -ucf taskB_mapping.ucf 
+par -w -intstyle ise -ol high -mt off taskB_map.ncd taskB.ncd taskB.pcf 
+par -w -intstyle ise -ol high -mt off taskB_map.ncd taskB.ncd taskB.pcf 
+par -w -intstyle ise -ol high -mt off taskB_map.ncd taskB.ncd taskB.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml taskB.twx taskB.ncd -o taskB.twr taskB.pcf -ucf taskB_mapping.ucf 
+bitgen -intstyle ise -f taskB.ut taskB.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc taskB_mapping.ucf -p xc6slx9-ftg256-3 taskB.ngc taskB.ngd  

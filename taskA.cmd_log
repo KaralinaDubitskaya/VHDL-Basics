@@ -1,0 +1,18 @@
+xst -intstyle ise -ifn "E:/xilinx/projects/lab1/taskA.xst" -ofn "E:/xilinx/projects/lab1/taskA.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-ftg256-3 taskA.ngc taskA.ngd  
+map -intstyle ise -p xc6slx9-ftg256-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o taskA_map.ncd taskA.ngd taskA.pcf 
+par -w -intstyle ise -ol high -mt off taskA_map.ncd taskA.ncd taskA.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml taskA.twx taskA.ncd -o taskA.twr taskA.pcf 
+bitgen -intstyle ise -f taskA.ut taskA.ncd 
+xst -intstyle ise -ifn "E:/xilinx/projects/lab1/taskA.xst" -ofn "E:/xilinx/projects/lab1/taskA.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc taskA_mapping.ucf -p xc6slx9-tqg144-3 taskA.ngc taskA.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o taskA_map.ncd taskA.ngd taskA.pcf 
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o taskA_map.ncd taskA.ngd taskA.pcf 
+xst -intstyle ise -ifn "E:/xilinx/projects/lab1/taskA.xst" -ofn "E:/xilinx/projects/lab1/taskA.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc taskA_mapping.ucf -p xc6slx9-tqg144-3 taskA.ngc taskA.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o taskA_map.ncd taskA.ngd taskA.pcf 
+xst -intstyle ise -ifn "E:/xilinx/projects/lab1/taskA.xst" -ofn "E:/xilinx/projects/lab1/taskA.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc taskA_mapping.ucf -p xc6slx9-ftg256-3 taskA.ngc taskA.ngd  
+map -intstyle ise -p xc6slx9-ftg256-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o taskA_map.ncd taskA.ngd taskA.pcf 
+par -w -intstyle ise -ol high -mt off taskA_map.ncd taskA.ncd taskA.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml taskA.twx taskA.ncd -o taskA.twr taskA.pcf -ucf taskA_mapping.ucf 
